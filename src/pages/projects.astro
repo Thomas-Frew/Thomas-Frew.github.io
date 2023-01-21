@@ -1,4 +1,15 @@
 ---
+const pageTitle = "Projects"
+
+const dateOne = new Date('10/25/2021');
+const dateTwo = new Date();
+
+const milliseconds = dateTwo.getTime() - dateOne.getTime(); 
+const minutes = Math.ceil(milliseconds/6000);
+const hours = Math.ceil(minutes/60);
+const days = Math.ceil(hours/24);
+const years = Math.ceil(days/365.25);
+
 ---
 
 <html lang="en">
@@ -7,13 +18,13 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Thomas Frew</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Home</a>
         <a href="/projects/">Projects</a>
 
-		<h1>About</h1>
-		<p>All about my projects, on display!</p>
+		<h1>{pageTitle}</h1>
+		<p>Proud programmer for {years} years, {days} days, {hours} hours and {minutes} minutes.</p>
 	</body>
 </html>
