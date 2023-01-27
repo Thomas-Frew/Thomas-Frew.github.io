@@ -12,14 +12,9 @@
   --xExtraLarge: 12rem;
   --extraLarge: 8rem;
   --large: 6rem;
-  --subLarge: 4rem;
   --medium: 2.5rem;
   --subMedium: 2rem;
   --small: 1.5rem;
-
-  /* Spacing */
-  --largeSpace: 6rem;
-  --smallSpace: 2rem;
 }
 
 
@@ -62,104 +57,77 @@ body {
   line-height: 1.2;
 }
 
-h1, h2, h3, p {
-  margin: 0;
-}
 
 p  {
-  margin: 0;
   text-align: left;
   font-size: var(--small);
 }
 
-.grid {
-  display: grid;
-  row-gap: var(--largeSpace)
+img {
+  max-width: 500px
 }
 
-
-/* Hero */
+/* Hero Styles */
 
 .hero {
-  display: grid;
-  grid-template-rows: auto auto auto;
+  margin: 1rem 0;
+  text-align: center;
+  font-size: var(--medium)
 }
 
-.hero-lead {
-  grid-row: 2 / 3;
-  margin: 1rem 0;
-  
-  font-size: var(--medium)
+.hero-box {
+  margin: var(--large) 0;
 }
 
 .hero-title {
-  grid-row: 3 / 4;
-  margin: 1rem 0;
-
   font-family: 'Barlow-Bold';
   color: var(--frewBlue);
-  font-size: var(--xExtraLarge);
-}
 
-.hero-icon {
-  grid-row: 4 / 5;
   margin: 1rem 0;
+  font-size: 12rem;
+}
 
-  font-size: var(--medium)
+.fa-solid {
+  text-align: center;
 }
 
 
-/* About Me */
+/* About Me Styles */
 
-.about {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: var(--smallSpace);
+
+.about-me {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
-.about-img {
-  grid-column: 1;
-  
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.about-me * {
+  margin: 1rem;
 }
 
-.about-content {
-  display: grid;
-  grid-template-rows: auto auto 5rem;
-  row-gap: var(--smallSpace);
-}
-
-.about-header {
-  grid-row: 1;
-
+.subheader {
   text-align: left;
   font-family: 'Barlow-Bold';
-  font-size: var(--subLarge);
-}
-
-.about-bio {
-  grid-row: 2;
+  font-size: var(--medium)
 }
 
 
 /* Levels of resizing */
 
 @media screen and (max-width: 1250px) {
-  .hero-title { font-size: var(--extraLarge); }
+  .hero-title { font-size: 8rem; }
 }
 
 @media screen and (max-width: 850px) {
-  .hero-title { font-size: var(--large); }
+  .hero-title { font-size: 6rem; }
+  .about-me { flex-direction: column; align-items: center; }
 }
 
 @media screen and (max-width: 650px) {
-  .hero-title { font-size: var(--subLarge); }
-  .hero-lead { font-size: var(--small); }
-  .about-header { font-size: var(--medium)}
+  .hero-title { font-size: 4rem; }
+  .hero-lead { font-size: 1.5rem; }
 }
-
 
 /* nav styles */
 .hamburger {
