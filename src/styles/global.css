@@ -1,4 +1,5 @@
-/* Constants */
+/* #region Constants */
+
 :root {
   /* Font Colors */
   --frewBlack:  #000011;
@@ -16,14 +17,20 @@
   --medium: 2.5rem;
   --subMedium: 2rem;
   --small: 1.5rem;
+  --tiny: 1rem;
 
   /* Spacing */
-  --largeSpace: 6rem;
-  --smallSpace: 2rem;
+  --largeSpace: 15rem;
+  --smallSpace: 3rem;
+  --tinySpace: 0.5rem;
+
+  /* Lines */
+  --mediumLine: 0.35rem;
 }
 
+/* #endregion */
 
-/* Fonts */
+/* #region Fonts */
 
 @font-face {
   font-family: 'Barlow-Bold';
@@ -41,7 +48,9 @@
   font-display: swap;
 }
 
-/* Standard styles */
+/* #endregion */
+
+/* #region Core styles */
 
 * {
   text-align: center;
@@ -66,10 +75,39 @@ h1, h2, h3, p {
   margin: 0;
 }
 
+h2 {
+  font-family: 'Barlow-Bold';
+  font-size: var(--subLarge);
+}
+
 p  {
-  margin: 0;
   text-align: left;
   font-size: var(--small);
+}
+
+button {
+  border: var(--mediumLine) solid var(--frewWhite);
+
+  background-color: transparent;
+  color: var(--frewWhite);
+
+  box-shadow: none;
+  outline:none;
+
+  transition: color 150ms ease, 
+              transform 150ms ease;
+
+  font-size: var(--small);
+  font-family: "Barlow-Bold"
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:hover {
+  border-color: var(--frewGold);
+  color: var(--frewGold);
 }
 
 .grid {
@@ -77,39 +115,30 @@ p  {
   row-gap: var(--largeSpace)
 }
 
+/* #endregion */
 
-/* Hero */
-
-.hero {
-  display: grid;
-  grid-template-rows: auto auto auto;
-}
+/* #region Hero */
 
 .hero-lead {
-  grid-row: 2 / 3;
-  margin: 1rem 0;
-  
   font-size: var(--medium)
 }
 
 .hero-title {
-  grid-row: 3 / 4;
-  margin: 1rem 0;
-
   font-family: 'Barlow-Bold';
   color: var(--frewBlue);
   font-size: var(--xExtraLarge);
 }
 
 .hero-icon {
-  grid-row: 4 / 5;
+  grid-row: 3;
   margin: 1rem 0;
 
   font-size: var(--medium)
 }
 
+/* #endregion */
 
-/* About Me */
+/* #region About Me */
 
 .about {
   display: grid;
@@ -127,7 +156,7 @@ p  {
 
 .about-content {
   display: grid;
-  grid-template-rows: auto auto 5rem;
+  grid-template-rows: auto auto 6rem;
   row-gap: var(--smallSpace);
 }
 
@@ -135,16 +164,84 @@ p  {
   grid-row: 1;
 
   text-align: left;
-  font-family: 'Barlow-Bold';
-  font-size: var(--subLarge);
+  color: var(--frewGold);
 }
 
 .about-bio {
   grid-row: 2;
 }
 
+/* #endregion */
 
-/* Levels of resizing */
+/* #region Skills */
+
+.skills {
+  display: grid;
+  row-gap: var(--smallSpace);
+}
+
+.skills-header {
+  color: var(--frewPurple);
+}
+
+.skills-timer {
+  font-size: var(--medium);
+}
+
+.skills-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 1fr 1fr;
+  row-gap: var(--smallSpace);
+}
+
+.skills-skill {
+  display: grid;
+  grid-template-rows: auto, auto, auto;
+  row-gap: var(--tinySpace);
+
+  transition: color 150ms ease;
+}
+
+
+.skills-skill:hover {
+  border-color: var(--frewPurple);
+  color: var(--frewPurple);
+}
+
+.skills-icon {
+  grid-row: 1;
+  margin: 0;
+  padding: 0;
+
+  font-size: var(--large);
+}
+
+.skills-name {
+  grid-row: 2;
+
+  font-size: var(--medium);
+  text-align: center;
+}
+
+.skills-level {
+  grid-row: 3;
+}
+
+.skills-star {
+  font-size: var(--tiny);
+  color: var(--frewPurple);
+
+  transition: color 150ms ease;
+}
+
+.skills-star:hover {
+  color:var(--frewWhite);
+}
+
+/* endregion */
+
+/* #region Media Compatibility */
 
 @media screen and (max-width: 1250px) {
   .hero-title { font-size: var(--extraLarge); }
@@ -152,13 +249,21 @@ p  {
 
 @media screen and (max-width: 850px) {
   .hero-title { font-size: var(--large); }
+
+  .skills-timer { font-size: var(--subMedium); }
+  .skills-icon { font-size: var(--subLarge); }
+  .skills-name { font-size: var(--small); }
 }
 
 @media screen and (max-width: 650px) {
+  h2 { font-size: var(--medium)}
+
   .hero-title { font-size: var(--subLarge); }
   .hero-lead { font-size: var(--small); }
-  .about-header { font-size: var(--medium)}
+
 }
+
+/* #endregion */
 
 
 /* nav styles */

@@ -1,0 +1,34 @@
+<script>
+  function startTimer(source, component) {
+    var milliseconds, minutes, seconds, hours, days, years;
+
+
+
+    setInterval(function () {
+      var now = new Date();
+
+      milliseconds = now.getTime() - source.getTime(); 
+      seconds = Math.ceil(milliseconds/1000);
+      minutes = Math.ceil((seconds+1)/60);
+      hours = Math.ceil((minutes+1)/60);
+      days = Math.ceil((hours+1)/24);
+      years = Math.ceil((days+1)/365.25);
+
+      seconds %= 60;
+      minutes %= 60;
+      hours %= 24;
+      days %= 365;
+
+      component.textContent = years + " years, " + days + " days, " + hours + " hours, " + minutes + " minutes and " + seconds + " seconds";
+    }, 1000);
+  }
+
+  window.onload = function () {
+    const sourceDate = new Date('07/21/2013');
+    const component = document.querySelector('.countdown');
+
+    startTimer(sourceDate, component);
+  };
+</script>
+
+<span class='countdown'>Over a Decade!</span>

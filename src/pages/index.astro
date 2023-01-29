@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting.jsx';
+import TimeSince from '../components/TimeSince.astro';
+import Skill from '../components/Skill.astro';
 ---
 <BaseLayout>
 	<div class = 'grid'>
@@ -15,10 +16,25 @@ import Greeting from '../components/Greeting.jsx';
 			<img class='about-img' src="https://images4.alphacoders.com/206/thumb-350-20658.jpg">
 
 			<div class='about-content'>
-				<h2 class = 'about-header'>About Me</h2>
+				<h2 class = 'about-header'>G'day, I'm Tom!</h2>
 				<p class = 'about-bio'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<button type="button">SHOW ME THIS GUY'S SKILLS</button> 
 			</div>
 		</div>
+
+		<div class = 'skills'>
+			<h2 class = 'skills-header'>What can I do?</h2>
+			<p class='skills-timer'>I've been programming for <TimeSince/>. In that time, I've picked up quite a few skills!</p>
+			<div class = 'skills-list'>
+				<Skill name='C++' icon='devicon-cplusplus-plain' level='5'/>
+				<Skill name='Javascript' icon='devicon-javascript-plain' level='3'/>
+				<Skill name='C#' icon='devicon-csharp-plain' level='4'/>
+				<Skill name='HTML' icon='devicon-html5-plain' level='3'/>
+				<Skill name='Python' icon='devicon-python-plain' level='4'/>
+				<Skill name='CSS' icon='devicon-css3-plain' level='3'/>
+			</div>
+		</div>
+		<div> <!-- Empty Space --> </div>
 	</div>
 	
 </BaseLayout>

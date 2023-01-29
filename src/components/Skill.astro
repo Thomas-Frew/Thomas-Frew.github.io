@@ -1,0 +1,19 @@
+---
+const { icon, name, level } = Astro.props;
+const skillId = "level-" + name;
+---
+
+<div class = 'skills-skill'> 
+    <div class={`skills-icon ${icon}`}/>
+    <p class = 'skills-name'> {name} </p>
+    <div class = 'skills-level' id = {skillId}/>
+</div>
+
+<script define:vars={{level, skillId}}>
+    const component = document.getElementById(skillId);
+    
+    for (let i = 0; i < parseInt(level); i++) {
+        component.innerHTML += "<span class = 'skills-star fa-solid fa-star'/>"
+    }
+
+</script>
