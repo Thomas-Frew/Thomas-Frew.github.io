@@ -23,12 +23,12 @@ import Skill from '../components/Skill.astro';
 				<p class = 'body-text'>Outside of personal projects, you can catch me competing in Hackathons and teaching coding under <a class = 'gold' href="https://leetcode.com/CanDoFrew/">@CanDoFrew</a>.
 					Otherwise, I'll be doodling, baking or hitting the gym!</p>
 				<p class = 'body-text'>If you like what you see, check out my resume below! 
-					Even after <TimeSince/> seconds as a programmer, I love it more than ever.</p>
-				<button type="button">SHOW ME THIS GUY'S SKILLS</button> 
+					After <TimeSince/> seconds as a programmer, I love it more than ever.</p>
+				<button type="button" onclick="location.href='#skills'">SHOW ME THIS GUY'S SKILLS</button> 
 			</div>
 		</div>
 
-		<div class = 'skills'>
+		<div id = 'skills' class = 'skills'>
 			<h2 class = 'header purple'>Languages</h2>
 			<div class = 'skills-list'>
 				<Skill name='C++' icon='devicon-cplusplus-plain' level='5'/>

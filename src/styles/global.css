@@ -61,6 +61,8 @@ html {
   background-color: var(--frewBlack);
   color: var(--frewWhite);
   font-family: 'Sofia', sans-serif;
+
+  scroll-behavior: smooth;
 }
 
 body {
