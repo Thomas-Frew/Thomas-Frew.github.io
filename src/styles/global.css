@@ -20,7 +20,7 @@
   --tiny: 1rem;
 
   /* Spacing */
-  --largeSpace: 15rem;
+  --largeSpace: 10rem;
   --smallSpace: 3rem;
   --tinySpace: 0.5rem;
 
@@ -67,22 +67,12 @@ body {
   margin: 0 auto;
   width: 100%;
   max-width: 140ch;
-  padding: 1rem;
+  padding:  var(--smallSpace);
   line-height: 1.2;
 }
 
 h1, h2, h3, p {
   margin: 0;
-}
-
-h2 {
-  font-family: 'Barlow-Bold';
-  font-size: var(--subLarge);
-}
-
-p  {
-  text-align: left;
-  font-size: var(--small);
 }
 
 button {
@@ -110,9 +100,48 @@ button:hover {
   color: var(--frewGold);
 }
 
+a {
+  transition: color 150ms ease, 
+}
+
+a:hover {
+  color: var(--frewWhite);
+}
+
 .grid {
   display: grid;
   row-gap: var(--largeSpace)
+}
+
+.header {
+  font-family: 'Barlow-Bold';
+  font-size: var(--subLarge);
+}
+
+.blurb {
+  text-align: left;
+  font-size: var(--subMedium)
+}
+
+.body-text {
+  text-align: justify;
+  font-size: var(--small);
+}
+
+/* #endregion */
+
+/* #region Color Mappings */
+
+.blue {
+  color: var(--frewBlue);
+}
+
+.purple {
+  color: var(--frewPurple);
+}
+
+.gold {
+  color: var(--frewGold);
 }
 
 /* #endregion */
@@ -127,6 +156,23 @@ button:hover {
   font-family: 'Barlow-Bold';
   color: var(--frewBlue);
   font-size: var(--xExtraLarge);
+  
+  background-image: linear-gradient(to right, var(--frewPurple), var(--frewBlue), var(--frewPurple)); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-animation 6s ease-in-out infinite;
+  background-size: 500% 100%;
+}
+
+@keyframes rainbow-animation {
+  0%,100% {
+    background-position: 0 0;
+  }
+
+  50% {
+      background-position: 100% 0;
+  }
 }
 
 .hero-icon {
@@ -156,20 +202,10 @@ button:hover {
 
 .about-content {
   display: grid;
-  grid-template-rows: auto auto 6rem;
+  grid-template-rows: auto auto auto auto 6rem;
   row-gap: var(--smallSpace);
 }
 
-.about-header {
-  grid-row: 1;
-
-  text-align: left;
-  color: var(--frewGold);
-}
-
-.about-bio {
-  grid-row: 2;
-}
 
 /* #endregion */
 
@@ -178,14 +214,6 @@ button:hover {
 .skills {
   display: grid;
   row-gap: var(--smallSpace);
-}
-
-.skills-header {
-  color: var(--frewPurple);
-}
-
-.skills-timer {
-  font-size: var(--medium);
 }
 
 .skills-list {
@@ -210,7 +238,6 @@ button:hover {
 }
 
 .skills-icon {
-  grid-row: 1;
   margin: 0;
   padding: 0;
 
@@ -218,14 +245,8 @@ button:hover {
 }
 
 .skills-name {
-  grid-row: 2;
-
   font-size: var(--medium);
   text-align: center;
-}
-
-.skills-level {
-  grid-row: 3;
 }
 
 .skills-star {
@@ -239,24 +260,34 @@ button:hover {
   color:var(--frewWhite);
 }
 
-/* endregion */
+/* #endregion */
+
+/* #region Projects */
+
+.projects {
+  display: grid;
+  row-gap: var(--smallSpace);
+}
+
+
+/* #endregion */
 
 /* #region Media Compatibility */
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1300px) {
   .hero-title { font-size: var(--extraLarge); }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .hero-title { font-size: var(--large); }
 
-  .skills-timer { font-size: var(--subMedium); }
+  .blurb { font-size: var(--small); }
   .skills-icon { font-size: var(--subLarge); }
   .skills-name { font-size: var(--small); }
 }
 
-@media screen and (max-width: 650px) {
-  h2 { font-size: var(--medium)}
+@media screen and (max-width: 700px) {
+  .header { font-size: var(--medium)}
 
   .hero-title { font-size: var(--subLarge); }
   .hero-lead { font-size: var(--small); }
