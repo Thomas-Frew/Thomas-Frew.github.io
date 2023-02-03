@@ -1,0 +1,26 @@
+---
+const { name, imgSrc, gitSrc, icons } = Astro.props;
+const clickCommand = "window.location.href='" + gitSrc + "'";
+const projectId = "project-" + name;
+---
+<div class = 'projects-project'> 
+    <video class = 'project-img' autoplay muted loop>
+        <source src={imgSrc} type="video/mp4">
+    </video>
+
+    <div class = 'project-content'>
+        <h3 id = {projectId} class = 'project-subheader subheader'>{name}</h3>
+        <p class = 'project-body body-text'><slot/></p>
+        <button class='project-button blue' type="button" onclick={clickCommand}>SHOW ME THE CODE</button> 
+    </div>
+</div>
+
+<script define:vars={{icons, projectId}}>
+    const component = document.getElementById(projectId);
+    const iconArr = icons.split(' ');
+
+    for (let i = 0; i < iconArr.length; i++) {
+        component.innerHTML += " <span class = 'project-skill blue " + iconArr[i] + "'/>";
+    }
+
+</script>

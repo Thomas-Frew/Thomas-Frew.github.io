@@ -2,6 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TimeSince from '../components/TimeSince.astro';
 import Skill from '../components/Skill.astro';
+import Project from '../components/Project.astro';
+
+const cppIcon = 'devicon-cplusplus-plain';
+const cSharpIcon = 'devicon-csharp-plain';
+const pythonIcon = 'devicon-python-plain';
+const jsIcon = 'devicon-javascript-plain';
+const htmlIcon = 'devicon-html5-plain';
+const cssIcon = 'devicon-css3-plain';
+const tfIcon = 'devicon-tensorflow-original';
+
+
 ---
 <BaseLayout>
 	<div class = 'grid'>
@@ -15,7 +26,7 @@ import Skill from '../components/Skill.astro';
 		<div class = 'about'>
 			<img class='about-img' src="https://i.ibb.co/NNHx2Xp/TomCodes.jpg"/>
 
-			<div class='about-content'>
+			<div class= 'about-content'>
 				<h2 class = 'header gold'>About Me</h2>
 				<p class = 'body-text'>G'day! I'm Tom, a Computer Science undergraduate at the University of Adelaide, Australia. 
 					While this course focuses on software engineering, algorithms, and CS research, I've always been passionate about programming. 
@@ -24,25 +35,53 @@ import Skill from '../components/Skill.astro';
 					Otherwise, I'll be doodling, baking or hitting the gym!</p>
 				<p class = 'body-text'>If you like what you see, check out my resume below! 
 					After <TimeSince/> seconds as a programmer, I love it more than ever.</p>
-				<button type="button" onclick="location.href='#skills'">SHOW ME THIS GUY'S SKILLS</button> 
+				<button class = 'gold' type="button" onclick="location.href='#skills'">SHOW ME THIS GUY'S SKILLS</button> 
 			</div>
 		</div>
 
 		<div id = 'skills' class = 'skills'>
-			<h2 class = 'header purple'>Languages</h2>
+			<h2 class = 'header purple'>Skills</h2>
 			<div class = 'skills-list'>
-				<Skill name='C++' icon='devicon-cplusplus-plain' level='5'/>
-				<Skill name='Javascript' icon='devicon-javascript-plain' level='3'/>
-				<Skill name='C#' icon='devicon-csharp-plain' level='4'/>
-				<Skill name='HTML' icon='devicon-html5-plain' level='3'/>
-				<Skill name='Python' icon='devicon-python-plain' level='4'/>
-				<Skill name='CSS' icon='devicon-css3-plain' level='3'/>
+				<Skill name='C++' icon={cppIcon} level='5'/>
+				<Skill name='Javascript' icon={jsIcon} level='3'/>
+				<Skill name='C#' icon={cSharpIcon} level='4'/>
+				<Skill name='HTML' icon={htmlIcon} level='3'/>
+				<Skill name='Python' icon={pythonIcon} level='4'/>
+				<Skill name='CSS' icon={cssIcon} level='3'/>
 			</div>
 		</div>
 
 		<div class = 'projects'>
 			<h2 class = 'header blue'>Projects</h2>
-			<p class='blurb'>This section is in progress! Stay tuned!</p>
+
+			<Project name = 'Visionary' imgSrc = 'src/images/visionary_dynamic.mp4' gitSrc="https://github.com/Thomas-Frew/Visionary"
+			icons = {`${pythonIcon} ${tfIcon}`} >Want AI with a keen eye? 
+			Visionary is a collection of tools that allow anyone to create custom object detection systems. 
+			Featuring two unique dataset generators, a CNN trainer, and neural network visualisation tools.
+			Come with a set of images and leave with a neural network!
+			A computer vision fan's paradice.</Project>
+
+			<Project name = 'QPacity' imgSrc = 'src/images/qpacity_dynamic.mp4' gitSrc="https://github.com/Thomas-Frew/QPacity"
+			icons = {`${cSharpIcon}`} >South Australia's COVID check-in system is insecure and ineffective.
+			But help is at hand… literally! QPacity assigns users a unique QPacity code (QR code).
+			By presenting this code at an event, users can quickly check in.
+			The maximum capacity of any room is also automatically enforced based on SA government standards.</Project>
+
+			<Project name = 'SACEology' imgSrc = 'src/images/saceology_dynamic.mp4' gitSrc="https://github.com/Thomas-Frew/SACEology"
+			icons = {`${cSharpIcon}`} >The South Australian Certificate of Education (SACE) can be confusing. 
+			However, understanding the SACE is crucial to successful teaching and learning. 
+			SACEology is a complete Learning Management System that helps South Australian teachers and students achieve their goals in the SACE.</Project>
+
+			<Project name = 'Calculus Co.' imgSrc = 'src/images/calculusco_dynamic.mp4' gitSrc="https://github.com/Thomas-Frew/SACEology"
+			icons = {`${cSharpIcon}`} >Mathematics, science, and engineering are great, but today's clunky graphics calculators don't cut it. 
+			You need a system that can support you!
+			As the first graphics calculator designed by students for students, Calculus Co. understands what you need and helps you achieve it post-haste.</Project>
+
+			<Project name = 'Chess++' imgSrc = 'src/images/chess_dynamic.mp4' gitSrc="https://github.com/Thomas-Frew/SACEology"
+			icons = {`${cppIcon}`} >Battle your buddies in a classic game of chess! Written C++ and designed with SFML.
+			Visual chess has a point-and-click UI and auto-saves each position to a condensed representation.
+			Developed in collaboration with a team of Computer Science students at the University of Adelaide.</Project>
+
 		</div>
 
 		<div> <!-- Empty Space --> </div>
