@@ -11,8 +11,6 @@ const jsIcon = 'devicon-javascript-plain';
 const htmlIcon = 'devicon-html5-plain';
 const cssIcon = 'devicon-css3-plain';
 const tfIcon = 'devicon-tensorflow-original';
-
-
 ---
 <BaseLayout>
 	<div class = 'grid'>
@@ -35,7 +33,7 @@ const tfIcon = 'devicon-tensorflow-original';
 					Otherwise, I'll be doodling, baking or hitting the gym!</p>
 				<p class = 'body-text'>If you like what you see, check out my resume below! 
 					After <TimeSince/> seconds as a programmer, I love it more than ever.</p>
-				<button class = 'gold' type="button" onclick="location.href='#skills'">SHOW ME THIS GUY'S SKILLS</button> 
+				<button class = 'gold' type="button" onclick="location.href='/thank-you'">SHOW ME THIS GUY'S SKILLS</button> 
 			</div>
 		</div>
 
@@ -84,7 +82,46 @@ const tfIcon = 'devicon-tensorflow-original';
 
 		</div>
 
+		<div class = 'contact'>
+			<h2 class = 'header gold'>Contact Me</h2>
+			<p class = 'body-text'>If you like what you see, why not shoot me and email?
+				We could develop software together, chat about your products or imagine how I can boost your team.
+				No matter what, I'd love to hear from you!</p>
+			<form action="https://formsubmit.co/27e8515f32999eb905d08c9ba1fcaedc" method="POST">
+				<div class = 'contact-form'>
+					<div class = 'contact-topline'>
+
+						<div class = 'contact-stack'>
+							<p class='body-header'>FULL NAME</p>
+							<input class = 'gold' type="text" name="name" required>
+						</div>
+						
+						<div class = 'contact-stack'>
+							<p class='body-header'>EMAIL</p>
+							<input class = 'gold' type="email" name="email" required>
+						</div>
+					</div>
+
+					<div class = 'contact-stack'>
+						<p class='body-header'>SUBJECT</p>
+						<input class = 'gold' type="text" name="subject" required>
+					</div>
+
+					<div class = 'contact-stack'>
+						<p class='body-header'>YOUR MESSAGE</p>
+						<textarea class = 'gold' name="content" required/>
+					</div>
+					
+					<button class = 'gold' type="submit">SEND THE CARRIER PIGEON</button>
+	
+					<input type="hidden" name="_captcha" value="false">
+					<input type="hidden" name="_next" value="https://thomas-frew.github.io/thank-you">
+					<input type="hidden" name="_template" value="box">
+				</div>
+		   </form>
+		</div>
+
 		<div> <!-- Empty Space --> </div>
 	</div>
-	
+
 </BaseLayout>
