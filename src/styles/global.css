@@ -391,12 +391,8 @@ button:hover.gold {
 
 .project-content {
   display: grid;
-  grid-template-rows: auto auto 1fr 6rem;
+  grid-template-rows: auto auto 6rem;
   row-gap: var(--smallSpace);
-}
-
-.project-button {
-  grid-row: 4;
 }
 
 .project-skill {
@@ -447,10 +443,6 @@ button:hover.gold {
 @media screen and (max-width: 1300px) {
   /* Hero */
   .hero-title { font-size: var(--extraLarge); }
-
-  /* Stacking */
-  .project-content { grid-template-rows: auto auto 6rem; }
-  .project-button { grid-row: 3; }
 
   /* Imagery */
   .about-img { width : 700px; }
