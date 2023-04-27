@@ -1,6 +1,5 @@
 ---
 const { name, imgSrc, gitSrc, icons } = Astro.props;
-const clickCommand = "window.location.href='" + gitSrc + "'";
 const projectId = "project-" + name;
 ---
 <div class = 'projects-project'> 
@@ -11,7 +10,7 @@ const projectId = "project-" + name;
     <div class = 'project-content'>
         <h3 id = {projectId} class = 'project-subheader subheader'>{name}</h3>
         <p class = 'project-body body-text'><slot/></p>
-        <button class='project-button blue' type="button" onclick={clickCommand}>SHOW ME THE CODE</button> 
+        <a href={gitSrc}> <button class='project-button blue link' type="button">SHOW ME THE CODE</button> </a>
     </div>
 </div>
 
